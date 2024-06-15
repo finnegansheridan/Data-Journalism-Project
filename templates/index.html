@@ -9,54 +9,35 @@
   </head>
   
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Boroughs
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Manhattan</a></li>
-                <li><a class="dropdown-item" href="#">Brooklyn</a></li>
-                <li><a class="dropdown-item" href="#">Queens</a></li>
-                <li><a class="dropdown-item" href="#">The Bronx</a></li>
-                <li><a class="dropdown-item" href="#">Staten Island</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    {% include 'navbar.html' %}
     <h2>Lead Levels in Blood - Finnegan Sheridan </h2>
-  
+
     <div id="line_graph_all">
-      {% include 'NYC.svg' %}
+      {% include 'nyc.svg' %}
     </div>
-  
-    <div>
-      <form action="/year" method="GET">
-        <label for="year">Choose a year:</label><br>
-        <select name="year" id="year_select">
-          {% for year in years %}
-          <option value="{{year}}">{{year}}</option>
-          {% endfor %}
-        </select>
-        <input type="submit" value="Submit">
-      <form>
-    </div>
+    <script>
+      Bronx = document.getElementsByClassName("Bronx")
+      for (fill of Bronx) {
+        fill.style.fill = 'hsl(100, 50%, {{Bronx}}%)'
+      }
+      Brooklyn = document.getElementsByClassName("Brooklyn")
+      for (fill of Brooklyn) {
+        fill.style.fill = 'hsl(100, 50%, {{Brooklyn}}%)'
+      }
+      Queens = document.getElementsByClassName("Queens")
+      for (fill of Queens) {
+        fill.style.fill = 'hsl(100, 50%, {{Queens}}%)'
+      }
+      Manhattan = document.getElementsByClassName("Manhattan")
+      for (fill of Manhattan) {
+        fill.style.fill = 'hsl(100, 50%, {{Manhattan}}%)'
+      }
+      Staten_Island = document.getElementsByClassName("Staten_Island")
+      for (fill of Staten_Island) {
+        fill.style.fill = 'hsl(100, 50%, 15)'
+      }
+    </script>
+  {% include 'footer.html' %}
 
   </body>
   </html>

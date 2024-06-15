@@ -1,23 +1,22 @@
 
 <html>
-<head>
-  <title>Data Journalism</title>
+  <head>
   <link rel="stylesheet" href="styles.css">
-  <title>Data Journalism</title>
+  <title></title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-</head>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  </head>
 <body>
-
+  {% include 'navbar.html' %}
   <h1>Borough Data - Finnegan Sheridan</h1>
-  <h2>Borough: {{year}}</h2>
+  <h2>2005-2016</h2>
 
-  <div id="north_america">
-    {% include 'line_graph.svg' %}
+  <div id="line_graph_all">
+    {% include 'borough.svg' %}
   </div>
-
+  {% include 'footer.html' %}
   
 </body>
 
